@@ -1,0 +1,169 @@
+SplineFontDB: 3.2
+FontName: KeebMedium
+FullName: Keeb Medium
+FamilyName: Keeb
+Weight: Medium
+Copyright: Fixed 6x13 - Public domain font.  Share and enjoy. Cozette - Copyright Ines
+UComments: "2025-8-29: Created with FontForge (http://fontforge.org)"
+Version: 001.000
+ItalicAngle: 0
+UnderlinePosition: -100
+UnderlineWidth: 50
+Ascent: 846
+Descent: 154
+InvalidEm: 0
+LayerCount: 2
+Layer: 0 0 "Back" 1
+Layer: 1 0 "Fore" 0
+XUID: [1021 690 1442604739 6711936]
+OS2Version: 0
+OS2_WeightWidthSlopeOnly: 0
+OS2_UseTypoMetrics: 1
+CreationTime: 1756426234
+ModificationTime: 1756428219
+OS2TypoAscent: 0
+OS2TypoAOffset: 1
+OS2TypoDescent: 0
+OS2TypoDOffset: 1
+OS2TypoLinegap: 0
+OS2WinAscent: 0
+OS2WinAOffset: 1
+OS2WinDescent: 0
+OS2WinDOffset: 1
+HheadAscent: 0
+HheadAOffset: 1
+HheadDescent: 0
+HheadDOffset: 1
+OS2Vendor: 'PfEd'
+DEI: 91125
+Encoding: UnicodeFull
+Compacted: 1
+UnicodeInterp: none
+NameList: AGL For New Fonts
+DisplaySize: 13
+AntiAlias: 0
+FitToEm: 0
+WinInfo: 0 52 9
+OnlyBitmaps: 1
+BeginChars: 1114112 10
+
+StartChar: mitz
+Encoding: 8888 8888 0
+Width: 480
+Flags: W
+LayerCount: 2
+EndChar
+
+StartChar: uniF0FE
+Encoding: 61694 61694 1
+Width: 461
+Flags: W
+LayerCount: 2
+EndChar
+
+StartChar: uniF422
+Encoding: 62498 62498 2
+Width: 461
+Flags: W
+LayerCount: 2
+EndChar
+
+StartChar: uF024B
+Encoding: 983627 983627 3
+Width: 461
+Flags: W
+LayerCount: 2
+EndChar
+
+StartChar: uF024D
+Encoding: 983629 983629 4
+Width: 461
+Flags: W
+LayerCount: 2
+EndChar
+
+StartChar: uF024A
+Encoding: 983626 983626 5
+Width: 1000
+LayerCount: 2
+EndChar
+
+StartChar: uF0249
+Encoding: 983625 983625 6
+Width: 1000
+LayerCount: 2
+EndChar
+
+StartChar: uF0219
+Encoding: 983577 983577 7
+Width: 461
+Flags: W
+LayerCount: 2
+EndChar
+
+StartChar: uniF414
+Encoding: 62484 62484 8
+Width: 461
+Flags: W
+LayerCount: 2
+EndChar
+
+StartChar: uF0214
+Encoding: 983572 983572 9
+Width: 461
+Flags: W
+LayerCount: 2
+EndChar
+EndChars
+BitmapFont: 13 10 11 2 1 Koob
+BDFStartProperties: 26
+COMMENT 1 "$Id: 6x13.bdf,v 1.115 2009-04-06 18:50:15+01 mgk25 Rel $"
+COMMENT 1 "Send bug reports to Markus Kuhn <http://www.cl.cam.ac.uk/~mgk25/>"
+FONT 1 "-Koob-Keeb-Medium-R-SemiCondensed--13-120-75-75-M-60-ISO10646-1"
+SIZE 1 "12 75 75"
+FONTBOUNDINGBOX 1 "6 13 0 -2"
+FONTNAME_REGISTRY 16 ""
+FOUNDRY 16 "Koob"
+FAMILY_NAME 16 "Keeb"
+WEIGHT_NAME 16 "Medium"
+SLANT 16 "R"
+SETWIDTH_NAME 16 "SemiCondensed"
+ADD_STYLE_NAME 16 ""
+PIXEL_SIZE 18 13
+POINT_SIZE 18 120
+RESOLUTION_X 19 75
+RESOLUTION_Y 19 75
+SPACING 16 "M"
+AVERAGE_WIDTH 18 60
+CHARSET_REGISTRY 16 "ISO10646"
+CHARSET_ENCODING 16 "1"
+DEFAULT_CHAR 19 0
+FONT_DESCENT 18 2
+FONT_ASCENT 18 11
+COPYRIGHT 16 "Fixed 6x13 - Public domain font.  Share and enjoy. Cozette - Copyright Ines"
+CAP_HEIGHT 18 9
+X_HEIGHT 18 6
+BDFEndProperties
+Resolution: 75
+BDFChar: 0 8888 6 0 4 0 8
+VuVVRL]E52VuQet
+BDFChar: 1 61694 6 0 6 1 7
+rpK3;mdC&S
+BDFChar: 2 62498 6 0 6 1 7
+E/9=+GQ\'J
+BDFChar: 3 983627 6 1 5 2 6
+i;!*Bp](9o
+BDFChar: 4 983629 6 1 5 2 6
+huE`W!;HNo!!)3_!!!#_zp](9oz
+BDFChar: 5 983626 6 0 0 0 0
+z
+BDFChar: 6 983625 13 0 0 0 0
+z
+BDFChar: 7 983577 6 0 5 1 8
+n<f`!["Pga
+BDFChar: 8 62484 6 1 5 2 6
+i:r,lp](9o
+BDFChar: 9 983572 6 0 5 1 8
+nEAs2r;?Kj
+EndBitmapFont
+EndSplineFont

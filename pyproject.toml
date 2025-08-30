@@ -1,0 +1,20 @@
+[project]
+name = "keeb"
+version = "0.1.0"
+description = "KeebFont builder"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "bdflib>=2.1.0",
+    "prettytable>=3.16.0",
+]
+
+[dependency-groups]
+dev = [
+    "black>=25.1.0",
+    "ipdb>=0.13.13",
+    "ipython>=8.18.1",
+    "isort>=6.0.1",
+    "mypy>=1.17.1",
+    "pyright>=1.1.404",
+]
