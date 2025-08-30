@@ -50183,7 +50183,7 @@ Flags: HW
 LayerCount: 2
 EndChar
 EndChars
-BitmapFont: 13 6047 10 3 1
+BitmapFont: 13 6047 11 2 1
 BDFStartProperties: 42
 FONT 1 "-inesw-Cozette-Medium-R-Normal--13-120-75-75-M-60-ISO10646-1"
 COMMENT 0 "(c) 2020-2025 Ines @ the.moonwit.ch"
@@ -50206,8 +50206,8 @@ FONT_NAME 16 "Cozette"
 FACE_NAME 16 "Cozette"
 COPYRIGHT 16 "(c) 2020-2025 Ines <ines@moonwit.ch>"
 FONT_VERSION 16 "1.300"
-FONT_ASCENT 18 10
-FONT_DESCENT 18 3
+FONT_ASCENT 18 11
+FONT_DESCENT 18 2
 UNDERLINE_POSITION 18 -19
 UNDERLINE_THICKNESS 18 13
 X_HEIGHT 18 5
