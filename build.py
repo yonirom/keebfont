@@ -1,4 +1,4 @@
-import fontforge
+import ipdb
 from bdflib import reader, writer, effects
 
 
@@ -17,16 +17,25 @@ fixed6x13ifull = effects.merge(fixed6x13, fixed6x13o)
 fixed6x13ifull.properties[b'WEIGHT_NAME'] = b'Italic'
 
 
+for g in fixed6x13.glyphs:
+    g.bbY += 1
+
+for g in fixed6x13ifull.glyphs:
+    g.bbY += 1
+
+for g in fixed6x13bfull.glyphs:
+    g.bbY += 1
 # writer.write_bdf(, open("keeb.bdf", "wb"))
 
 
-cozette = reader.read_bdf(open('build/inter/Cozette.bdf', "rb"))
+cozette = reader.read_bdf(open('tmp/Cozette.bdf', "rb"))
 
-myglyphs = reader.read_bdf(open('build/inter/Keebglyphs.bdf', "rb"))
+myglyphs = reader.read_bdf(open('tmp/Keebglyphs.bdf', "rb"))
 
 
 cozette_with_new_glyphs = effects.merge(cozette, myglyphs)
 
+writer.write_bdf(cozette_with_new_glyphs, open("tmp/merged.bdf", "wb"))
 
 writer.write_bdf(effects.merge(cozette_with_new_glyphs,
                  fixed6x13), open("build/Keeb.bdf", "wb"))
