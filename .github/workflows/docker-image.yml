@@ -33,4 +33,10 @@ jobs:
         uses: addnab/docker-run-action@v3
         with:
           image: keebbuilder:temp
+          options: -v ${{ github.workspace }}:/app/build
           run: make
+      - 
+        name: Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: *.ttf
