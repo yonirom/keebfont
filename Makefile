@@ -21,10 +21,10 @@ $(BDF_OBJECTS): | $(INTERMEDIATE_OBJECTS)
 	python build.py
 
 %.otb: %.bdf 
-	./bitmapfont2otb --no-rename $< $@ 
+	python bitmapfont2otb --no-rename $< $@ 
 
 %.ttf: %.bdf
-	./bitmapfont2otb --no-rename $< $@ 
+	python bitmapfont2otb --no-rename $< $@ 
 
 
 .PHONY: clean

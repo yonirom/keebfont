@@ -1,5 +1,4 @@
-#!/home/meepmeep/Documents/keebfont/.venv/bin/python3
-import ipdb
+#!/usr/bin/env python
 import argparse
 import prettytable
 import re
