@@ -23,8 +23,6 @@ RUN --mount=type=cache,target=/root/.cache/uv \
 COPY . /app
 RUN --mount=type=cache,target=/root/.cache/uv \
     uv sync --locked --no-dev
-RUN git clone https://github.com/ctrlcctrlv/bitmapfont2otb.git
-RUN cd bitmapfont2otb; uv pip install .; cd -
 
 # Then, use a final image without uv
 FROM debian:trixie-slim
