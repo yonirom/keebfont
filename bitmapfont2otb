@@ -1,0 +1,211 @@
+#!/home/meepmeep/Documents/keebfont/.venv/bin/python3
+import ipdb
+import argparse
+import prettytable
+import re
+import sys
+try:
+    import fontforge
+except ImportError as ie:
+    print(f"FontForge (fontforge.org) must be separately installed, not available as pip package! {
+          ie}", file=sys.stderr)
+    sys.exit(1)
+import glob
+import os
+import warnings
+from bdflib import reader as bdfreader
+
+ap = argparse.ArgumentParser(
+    description="Convert bitmap font to OpenType font with squares in outlines and bitmap strike")
+ap.add_argument("--no-rename", action="store_true",
+                help="Don't rename glyphs based on their encodings, nor re-encode glyphs based on their names")
+ap.add_argument("--keep-temp-sfd", action="store_true",
+                help="Keep temporary SFD for debugging")
+ap.add_argument("--ignore-encoding", action="store_true",
+                help="Ignore encoding?")
+ap.add_argument("infile")
+ap.add_argument("outfile")
+args = ap.parse_args()
+
+
+def rename_glyphs(font):
+    global args
+    if args.no_rename:
+        return
+    for g in font.glyphs():
+        oldenc = g.unicode
+        oldname = g.glyphname
+        try:
+            newname = fontforge.nameFromUnicode(oldenc, "AGL without afii")
+        except ValueError:
+            continue
+        newenc = fontforge.unicodeFromName(oldname)
+        if newenc == -1:
+            continue
+        if oldname != newname and g.altuni is None:
+            print(("Changing glyph name {} to {} (because encoding is U+{:04X}" +
+                   " && !altuni)").format(oldname, newname, g.unicode), file=sys.stderr)
+        if g.altuni is None:
+            g.glyphname = newname
+            g.unicode = newenc
+
+
+def clean_glyph_names(font):
+    for g in font.glyphs():
+        if '$' in g.glyphname:
+            g.glyphname = g.glyphname.replace('$', '')
+
+
+def default_char(bdf, f):
+    if b"DEFAULT_CHAR" in bdf.properties:
+        notdef = bdf.properties[b"DEFAULT_CHAR"]
+        if not notdef in f:
+            return
+        ndg = f[notdef]
+        fore = ndg.layers["Fore"]
+        if f[0].unicode == 0:
+            f.removeGlyph(f[0])
+        notdef = f.createChar(0, ".notdef")
+        notdef.layers["Fore"] = fore
+        notdef.width = ndg.width
+        f.removeGlyph(ndg)
+
+
+cm = fontforge.open(args.infile)
+cm.em = 2048
+out_ext_i = args.outfile.rindex(".")
+out_ext = args.outfile[out_ext_i:]
+if out_ext == ".otb" or out_ext == ".otf":
+    output_req = "opentype"
+elif out_ext == ".ttf" or out_ext == ".ttb":
+    output_req = "truetype"
+else:
+    print("Output format must be one of: otb, otf, ttf, ttb (file ext. mandatory)", file=sys.stderr)
+    sys.exit(1)
+out_bdf = args.outfile.replace(out_ext, ".bdf")
+if out_ext[-1] == "b":
+    out_ext = out_ext[:-1] + "f"
+rename_glyphs(cm)
+cm.generate(out_bdf)
+for bdf in glob.glob("*.bdf"):
+    if bdf.startswith(out_bdf.split(".")[0] + "-") and re.search(bdf, r"\d+\.bdf$"):
+        out_bdf = out_bdf.replace(".bdf", "_ffout.bdf")
+        os.rename(bdf, out_bdf)
+        break
+f = fontforge.font()
+# enforce unified fonts
+f.em = 2048
+f.hhea_linegap = 0
+f.os2_typolinegap = 0
+
+f.ascent = cm.ascent
+f.descent = cm.descent
+f.importBitmaps(out_bdf, True)
+with open(out_bdf, "rb") as bdff:
+    bdf = bdfreader.read_bdf(bdff)
+
+t = prettytable.PrettyTable(['BDF Property', 'Value'])
+for key, val in bdf.properties.items():
+    k = key.decode('latin1') if isinstance(key, bytes) else repr(key)
+    v = val.decode('latin1') if isinstance(val, bytes) else repr(val)
+    t.add_row([k, v])
+print(t, file=sys.stderr)
+
+if b"PIXEL_SIZE" in bdf.properties:
+    pxsz = int(bdf.properties[b"PIXEL_SIZE"])
+elif all([e in bdf.properties for e in [b"FONT_ASCENT", b"FONT_DESCENT"]]):
+    pxsz = int(bdf.properties[b"FONT_ASCENT"]) + \
+        int(bdf.properties[b"FONT_DESCENT"])
+else:
+    raise ValueError(bdf)
+
+block_size = f.em / pxsz
+quad_width = int(bdf.properties[b"QUAD_WIDTH"]
+                 ) if b"QUAD_WIDTH" in bdf.properties else pxsz
+
+
+def is_monospace(bdf):
+    if b"SPACING" in bdf.properties:
+        return bdf.properties[b"SPACING"] in [b"C", b"M"]
+    else:
+        advances = [g.advance for g in bdf.glyphs]
+        return len(advances) > 0 and all([a == advances[0] or a == 0 for a in advances])
+
+
+def pos_to_contour(x, y):
+    pos_x, pos_y = x*block_size, y*block_size
+    c = fontforge.contour()
+    c.moveTo(pos_x, pos_y)
+    c.lineTo(pos_x+block_size, pos_y)
+    c.lineTo(pos_x+block_size, pos_y+block_size)
+    c.lineTo(pos_x, pos_y+block_size)
+    c.closed = True
+    return c
+
+
+is_mono = is_monospace(bdf)
+for i, g in enumerate(bdf.glyphs):
+    gn = g.name.decode("utf-8")
+    x, y, w, h = g.get_bounding_box()
+    if h != 13 or w != 6:
+        print(f"Skipping {gn} because dimensions were not 6x13 w: {w} h: {h}")
+        continue
+    orig_x = x
+    l = fontforge.layer()
+    pixels = list()
+    for row in g.iter_pixels():
+        pixels.append([p for p in row])
+    for row in reversed(pixels):
+        for p in row:
+            if p:
+                c = pos_to_contour(x, y)
+                l += c
+            x += 1
+        x = orig_x
+        y += 1
+    if re.match(r'^\d+$', gn):
+        e = int(gn, 10)
+    else:
+        e = -1
+    if gn in f:
+        f.removeGlyph(-1, gn)
+    elif e in f and e != -1:
+        try:
+            f.removeGlyph(f[e])
+        except:
+            pass
+    ffg = f.createChar(e, gn)
+    ffg.foreground = l
+    if is_mono:
+        ffg.width = int(block_size*quad_width)
+    else:
+        ffg.width = int(block_size*(g.advance))
+
+f.selection.all()
+known_encodings = {
+    b"KOI8": "KOI8-R"
+}
+ignored_encodings = []
+bdf_encoding = bdf.properties.get(b"CHARSET_REGISTRY")
+ignore_encoding = bdf_encoding in ignored_encodings or args.ignore_encoding
+if bdf_encoding not in known_encodings and not ignore_encoding:
+    f.encoding = "UnicodeFull"
+elif not ignore_encoding:
+    f.encoding = known_encodings[bdf_encoding]
+f.importBitmaps(out_bdf)
+clean_glyph_names(f)
+if not args.keep_temp_sfd:
+    try:
+        os.unlink("output.sfd")
+    except:
+        pass
+if out_ext == ".ttf":
+    f.is_quadratic = True
+    output_req = "opentype"
+default_char(bdf, f)
+f.save("output.sfd")
+out_otf = out_bdf.replace(".bdf", out_ext)
+f.encoding = "UnicodeFull"
+rename_glyphs(f)
+f.generate(out_otf, flags=(output_req,), bitmap_type="otf")
+os.rename(out_otf, args.outfile)

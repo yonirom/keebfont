@@ -23,8 +23,13 @@ $(BDF_OBJECTS): | $(INTERMEDIATE_OBJECTS)
 	python build.py
 
 %.otb: %.bdf 
-	bitmapfont2otb --no-rename $< $@ 
+	./bitmapfont2otb --no-rename $< $@ 
 
 
 %.ttf: %.otb
 	python convert_font_type.py $< $@
+
+
+.PHONY: clean
+clean:
+	rm -rf build tmp

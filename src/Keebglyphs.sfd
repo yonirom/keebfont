@@ -7,76 +7,88 @@ Copyright: Fixed 6x13 - Public domain font.  Share and enjoy. Cozette - Copyrigh
 UComments: "2025-8-29: Created with FontForge (http://fontforge.org)"
 Version: 001.000
 ItalicAngle: 0
-UnderlinePosition: -100
-UnderlineWidth: 50
-Ascent: 846
-Descent: 154
+UnderlinePosition: -200
+UnderlineWidth: 1000
+Ascent: 1733
+Descent: 315
 InvalidEm: 0
 LayerCount: 2
 Layer: 0 0 "Back" 1
 Layer: 1 0 "Fore" 0
 XUID: [1021 690 1442604739 6711936]
+FSType: 0
 OS2Version: 0
 OS2_WeightWidthSlopeOnly: 0
-OS2_UseTypoMetrics: 1
+OS2_UseTypoMetrics: 0
 CreationTime: 1756426234
-ModificationTime: 1756596670
-OS2TypoAscent: 0
-OS2TypoAOffset: 1
-OS2TypoDescent: 0
-OS2TypoDOffset: 1
+ModificationTime: 1756674740
+PfmFamily: 49
+TTFWeight: 500
+TTFWidth: 5
+LineGap: 0
+VLineGap: 0
+OS2TypoAscent: 1733
+OS2TypoAOffset: 0
+OS2TypoDescent: -315
+OS2TypoDOffset: 0
 OS2TypoLinegap: 0
-OS2WinAscent: 0
-OS2WinAOffset: 1
-OS2WinDescent: 0
-OS2WinDOffset: 1
-HheadAscent: 0
-HheadAOffset: 1
-HheadDescent: 0
-HheadDOffset: 1
+OS2WinAscent: 1733
+OS2WinAOffset: 0
+OS2WinDescent: 315
+OS2WinDOffset: 0
+HheadAscent: 1733
+HheadAOffset: 0
+HheadDescent: -315
+HheadDOffset: 0
 OS2Vendor: 'PfEd'
+MarkAttachClasses: 1
 DEI: 91125
+LangName: 1033
 Encoding: UnicodeFull
+Compacted: 1
 UnicodeInterp: none
 NameList: AGL For New Fonts
 DisplaySize: 13
 AntiAlias: 0
 FitToEm: 0
-WinInfo: 61455 51 4
+WinInfo: 0 54 3
 OnlyBitmaps: 1
+BeginPrivate: 0
+EndPrivate
+TeXData: 1 0 0 346030 173015 115343 0 -1048576 115343 783286 444596 497025 792723 393216 433062 380633 303038 157286 324010 404750 52429 2506097 1059062 262144
 BeginChars: 1114112 34
 
 StartChar: mitz
 Encoding: 8888 8888 0
-Width: 480
+Width: 1000
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: uniF0FE
 Encoding: 61694 61694 1
-Width: 461
+Width: 1000
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: uniF422
 Encoding: 62498 62498 2
-Width: 461
+Width: 1000
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: uF024B
 Encoding: 983627 983627 3
-Width: 461
+Width: 1000
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: uF024D
 Encoding: 983629 983629 4
-Width: 461
+Width: 1000
 Flags: W
 LayerCount: 2
 EndChar
@@ -84,32 +96,34 @@ EndChar
 StartChar: uF024A
 Encoding: 983626 983626 5
 Width: 1000
+Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: uF0249
 Encoding: 983625 983625 6
 Width: 1000
+Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: uF0219
 Encoding: 983577 983577 7
-Width: 461
+Width: 1000
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: uniF414
 Encoding: 62484 62484 8
-Width: 461
+Width: 1000
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: uF0214
 Encoding: 983572 983572 9
-Width: 461
+Width: 1000
 Flags: W
 LayerCount: 2
 EndChar
@@ -117,167 +131,172 @@ EndChar
 StartChar: uniE0B0
 Encoding: 57520 57520 10
 Width: 1000
-VWidth: 2048
+Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: uniE0B1
 Encoding: 57521 57521 11
 Width: 1000
-VWidth: 2048
+Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: uniE0B2
 Encoding: 57522 57522 12
 Width: 1000
-VWidth: 2048
+Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: uniE0B3
 Encoding: 57523 57523 13
 Width: 1000
-VWidth: 2048
+Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: uniE0B4
 Encoding: 57524 57524 14
 Width: 1000
-VWidth: 2048
+Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: uniE0B5
 Encoding: 57525 57525 15
 Width: 1000
-VWidth: 2048
+Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: uniE0B6
 Encoding: 57526 57526 16
 Width: 1000
-VWidth: 2048
+Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: uniE0B7
 Encoding: 57527 57527 17
 Width: 1000
-VWidth: 2048
+Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: uniE0B8
 Encoding: 57528 57528 18
 Width: 1000
-VWidth: 2048
+Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: uniE0B9
 Encoding: 57529 57529 19
 Width: 1000
-VWidth: 2048
+Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: uniE0BA
 Encoding: 57530 57530 20
 Width: 1000
-VWidth: 2048
+Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: uniE0BB
 Encoding: 57531 57531 21
 Width: 1000
-VWidth: 2048
+Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: uniE0BC
 Encoding: 57532 57532 22
 Width: 1000
-VWidth: 2048
+Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: uniE0BD
 Encoding: 57533 57533 23
 Width: 1000
-VWidth: 2048
+Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: uniE0BE
 Encoding: 57534 57534 24
 Width: 1000
-VWidth: 2048
+Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: uniE0BF
 Encoding: 57535 57535 25
 Width: 1000
-VWidth: 2048
+Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: uniE0C0
 Encoding: 57536 57536 26
 Width: 1000
+Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: uF0156
 Encoding: 983382 983382 27
-Width: 461
+Width: 1000
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: uF0157
 Encoding: 983383 983383 28
-Width: 461
+Width: 1000
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: uF0158
 Encoding: 983384 983384 29
-Width: 461
+Width: 1000
+Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: uF0159
 Encoding: 983385 983385 30
 Width: 1000
+Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: uniF444
 Encoding: 62532 62532 31
-Width: 461
+Width: 1000
+Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: uniF06E
 Encoding: 61550 61550 32
-Width: 461
+Width: 1000
+Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: uniF070
 Encoding: 61552 61552 33
-Width: 461
+Width: 1000
 Flags: W
 LayerCount: 2
 EndChar
 EndChars
-BitmapFont: 13 34 11 2 1 Koob
+BitmapFont: 13 35 11 2 1 Koob
 BDFStartProperties: 26
 COMMENT 1 "$Id: 6x13.bdf,v 1.115 2009-04-06 18:50:15+01 mgk25 Rel $"
 COMMENT 1 "Send bug reports to Markus Kuhn <http://www.cl.cam.ac.uk/~mgk25/>"
@@ -310,16 +329,16 @@ Resolution: 75
 BDFChar: 0 8888 6 0 4 0 8
 VuVVRL]E52VuQet
 BDFChar: 1 61694 6 0 6 1 7
-rpK3;mdC&S
+rpK3+mdC&S
 BDFChar: 2 62498 6 0 6 1 7
 E/9=+GQ\'J
 BDFChar: 3 983627 6 1 5 2 6
 i;!*Bp](9o
 BDFChar: 4 983629 6 1 5 2 6
-huE`Wz
+i:uO"p](9o
 BDFChar: 5 983626 6 0 0 0 0
 z
-BDFChar: 6 983625 13 0 0 0 0
+BDFChar: 6 983625 6 0 0 0 0
 z
 BDFChar: 7 983577 6 0 5 1 8
 n<f`!["Pga
@@ -327,53 +346,53 @@ BDFChar: 8 62484 6 1 5 2 6
 i:r,lp](9o
 BDFChar: 9 983572 6 0 5 1 8
 nEAs2r;?Kj
-BDFChar: 10 57520 6 0 6 -1 11
+BDFChar: 10 57520 6 0 6 -2 10
 JAC+4q#(-hq!d4WJ,fQL
-BDFChar: 11 57521 6 0 6 -1 11
+BDFChar: 11 57521 6 0 6 -2 10
 J3Y4g#Qt23#S8+DJ,fQL
-BDFChar: 12 57522 6 0 6 -1 11
+BDFChar: 12 57522 6 0 6 -2 10
 !X9,U5(<K[4rt1<!WW3#
-BDFChar: 13 57523 6 0 6 -1 11
+BDFChar: 13 57523 6 0 6 -2 10
 !X&c?+@(HB+:ne]!WW3#
-BDFChar: 14 57524 6 0 6 -1 11
+BDFChar: 14 57524 6 0 6 -2 10
 i;!6Jrr2orrqu]hhuE`W
-BDFChar: 15 57525 6 0 6 -1 11
+BDFChar: 15 57525 6 0 6 -2 10
 i&D\b"pP89"q2J2huE`W
-BDFChar: 16 57526 6 0 6 -1 11
+BDFChar: 16 57526 6 0 6 -2 10
 %R,>jrr2orrdK;[%KHJ/
-BDFChar: 17 57527 6 0 6 -1 11
+BDFChar: 17 57527 6 0 6 -2 10
 %QJE8^qdb$^gM+@%KHJ/
-BDFChar: 18 57528 6 0 5 -1 11
+BDFChar: 18 57528 6 0 5 -2 10
 J:PGNi8F+onG)eVqu?]s
-BDFChar: 19 57529 6 0 6 -1 11
+BDFChar: 19 57529 6 0 6 -2 10
 J:KmM+<V4$#Qt83!WW3#
-BDFChar: 20 57530 6 0 5 -1 11
+BDFChar: 20 57530 6 0 5 -2 10
 "9],A*#q('4FDPSqu?]s
-BDFChar: 21 57531 6 0 6 -1 11
+BDFChar: 21 57531 6 0 6 -2 10
 !WiK-#RCta+@&2BJ,fQL
-BDFChar: 22 57532 6 0 5 -1 11
+BDFChar: 22 57532 6 0 5 -2 10
 r;??bnF5Aoi5!-YJ,fQL
-BDFChar: 23 57533 6 0 6 -1 11
+BDFChar: 23 57533 6 0 6 -2 10
 !WiK-#RCta+@&2BJ,fQL
-BDFChar: 24 57534 6 0 5 -1 11
+BDFChar: 24 57534 6 0 5 -2 10
 r;:qi4?OT'*"35Y"98E%
-BDFChar: 25 57535 6 0 6 -1 11
+BDFChar: 25 57535 6 0 6 -2 10
 J:KmM+<V4$#Qt83!WW3#
-BDFChar: 26 57536 13 0 0 0 0
+BDFChar: 26 57536 6 0 0 0 0
 z
-BDFChar: 27 983382 6 1 5 1 5
-L]@DT!)NXq!!",A!!!!qzL]@DTz
-BDFChar: 28 983383 6 0 6 0 6
+BDFChar: 27 983382 6 1 5 2 6
+Leo3jL]@DT
+BDFChar: 28 983383 6 0 6 1 7
 rjp\Kf"1h\
-BDFChar: 29 983384 6 0 6 0 6
+BDFChar: 29 983384 6 0 6 1 7
 rdq/5We13M
-BDFChar: 30 983385 13 0 0 0 0
+BDFChar: 30 983385 6 0 0 0 0
 z
-BDFChar: 31 62532 6 1 5 1 5
+BDFChar: 31 62532 6 1 5 2 6
 E;95'Du]k<
-BDFChar: 32 61550 6 0 6 1 5
+BDFChar: 32 61550 6 0 6 2 6
 3(/ot2uipY
-BDFChar: 33 61552 6 0 6 -1 7
+BDFChar: 33 61552 6 0 6 0 8
 J3Z))P"[h<!WW3#
 EndBitmapFont
 EndSplineFont
