@@ -5,10 +5,8 @@ BDF_OBJECTS = $(BUILD_DIR)/Keeb.bdf $(BUILD_DIR)/KeebBold.bdf $(BUILD_DIR)/KeebI
 TTF_OBJECTS = $(BDF_OBJECTS:.bdf=.ttf)
 OTB_OBJECTS = $(BDF_OBJECTS:.bdf=.otb)
 
-.PRECIOUS: %.otb
-
 .PHONY: all
-all: $(TTF_OBJECTS) | $(BUILD_DIR)
+all: $(TTF_OBJECTS) $(OTB_OBJECTS) | $(BUILD_DIR)
 
 $(BUILD_DIR): | $(INTERMEDIATE_DIR)
 	mkdir -p $(BUILD_DIR)
@@ -25,9 +23,8 @@ $(BDF_OBJECTS): | $(INTERMEDIATE_OBJECTS)
 %.otb: %.bdf 
 	./bitmapfont2otb --no-rename $< $@ 
 
-
-%.ttf: %.otb
-	python convert_font_type.py $< $@
+%.ttf: %.bdf
+	./bitmapfont2otb --no-rename $< $@ 
 
 
 .PHONY: clean
