@@ -23,10 +23,10 @@ jobs:
           load: true
           context: .
           push: false
-          tags: keebbuilder:$(date +%s)
+          tags: keebbuilder:temp
 
       - 
         name: Run Pytest
         uses: addnab/docker-run-action@v3
         with:
-          image: keebbuilder:$(date +%s)   
+          image: keebbuilder:temp   
