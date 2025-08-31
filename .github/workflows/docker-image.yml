@@ -29,7 +29,8 @@ jobs:
           tags: keebbuilder:temp
 
       - 
-        name: Run Pytest
+        name: Run KeebFont build
         uses: addnab/docker-run-action@v3
         with:
-          image: keebbuilder:temp   
+          image: keebbuilder:temp
+          run: make
