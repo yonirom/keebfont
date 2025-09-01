@@ -121,6 +121,7 @@ else:
 block_size = f.em / pxsz
 quad_width = int(bdf.properties[b"QUAD_WIDTH"]
                  ) if b"QUAD_WIDTH" in bdf.properties else pxsz
+quad_width = 6
 
 
 def is_monospace(bdf):
@@ -146,7 +147,7 @@ is_mono = is_monospace(bdf)
 for i, g in enumerate(bdf.glyphs):
     gn = g.name.decode("utf-8")
     x, y, w, h = g.get_bounding_box()
-    if h != 13 or w != 6:
+    if w != 6:
         print(f"Skipping {gn} because dimensions were not 6x13 w: {w} h: {h}")
         continue
     orig_x = x
